@@ -1,0 +1,67 @@
+Задача №1
+
+
+Задача №2
+
+def del_rep(num): #Функция del_rep
+    unique_nums = list(set(num))
+    sorted_nums = sorted(unique_nums)
+    return sorted_nums
+    
+num = [1, 2, 1, 2, 3, 1, 2, 3, 4]
+print(del_rep(num)) #Вывод 1, 2, 3, 4
+
+Задача №3
+
+def lim_max(*nums, limit):   #Функция lim_max
+    max_value = -1
+    for num in nums:        
+        if num < limit and num > max_value:
+            max_value = num    
+    return max_value
+print(lim_max(10, 20, 30, 40, 60, 70, 80, 90, 100, limit = 50)) #Вывод: 10
+
+Задача №4
+
+def temp_cat(temp): #Функция temp_cat(temp)
+    if temp < -20:
+        print('Холодно')
+    elif temp < -20:
+        print('Прохладно')
+    elif temp <= 0:
+        print('Прохладно')
+    elif temp > 0:
+        print('Зябко')
+    elif temp < 15:
+        print('Зябко')
+    elif temp > 15:
+        print('Тепло')
+    elif temp <= 25:
+        print('Теплоо')
+    elif temp > 25:
+        print('Жарко')
+    else:
+        print('not')
+temp_cat(20) # Вывод: 
+   
+
+Задача №5
+
+def check_phn(phones): #Функция check_pnn
+    formatted_phones = []
+    for phone in phones:
+        digits = ''.join(filter(str.isdigit, phone))
+        if len(digits) == 11 and digits[0] in ('7', '8'):
+            formatted_phone = '+7(' + digits[1:4] + ')' + digits[4:7] + '-' + digits[7:9] + '-' + digits[9:]
+            formatted_phones.append(formatted_phone)        
+        else:
+            formatted_phones.append(-1)
+    return formatted_phones
+phones = ['+7(123)456-7890', '8(123)456-7890', '+7 123 456 78901', '123 456 7890']
+print(check_phn(phones))  # Вывод: ['+7(123)456-7890', '+7(123)456-7890', -1, -1]
+
+
+
+
+
+
